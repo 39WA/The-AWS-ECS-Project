@@ -423,11 +423,4 @@ Possible enhancements:
 
 ---
 
-# Author
 
-**<Your Name>**
-
-DevOps / Cloud Engineering Portfolio Project
-
-GitHub:
-https://github.com/<yourusername>
