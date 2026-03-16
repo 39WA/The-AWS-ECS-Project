@@ -1,4 +1,4 @@
-# The-AWS-ECS-Project1
+# The-AWS-ECS-Project
 
 # ThreatMod ECS Deployment Project
 
