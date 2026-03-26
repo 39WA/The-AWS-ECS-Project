@@ -258,7 +258,3 @@ Local Development → Docker → ECR → ECS → Load Balancer → Live Applicat
 - Monitoring with CloudWatch  
 
 ---
-
-## 👤 Author
-
-Sumayah
