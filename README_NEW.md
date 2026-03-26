@@ -125,6 +125,9 @@ docker run -p 80:80 threatmod
 curl http://localhost/health
 ```
 
+<p align="center">
+  <img src="docs/dcoker-running.png" width="800"/>
+</p>
 ---
 
 ## 📦 Step 3 — Container Registry (ECR)
