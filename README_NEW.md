@@ -126,7 +126,7 @@ curl http://localhost/health
 ```
 
 <p align="center">
-  <img src="docs/dcoker-running.png" width="800"/>
+  <img src="docs/docker-running.png" width="800"/>
 </p>
 ---
 
