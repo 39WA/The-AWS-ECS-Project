@@ -238,9 +238,6 @@ docker push <account-id>.dkr.ecr.eu-west-2.amazonaws.com/threatmod:latest
 
 ---
 
-# 👤 Author
 
-**Sumayah**  
-DevOps / Cloud Engineering Portfolio  
 
 GitHub: https://github.com/<yourusername>
