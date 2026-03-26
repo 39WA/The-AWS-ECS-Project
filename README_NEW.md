@@ -92,6 +92,10 @@ GitHubActions -->|Deploy| ECSService
 python3 app/main.py
 ```
 
+<p align="center">
+  <img src="docs/app-running.png" width="800"/>
+</p>
+
 ### Test
 
 ```bash
