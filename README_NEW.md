@@ -144,6 +144,10 @@ aws ecr create-repository --repository-name threatmod --region eu-west-2
 docker push <account-id>.dkr.ecr.eu-west-2.amazonaws.com/threatmod:latest
 ```
 
+<p align="center">
+  <img src="docs/ecr-push.png" width="800"/>
+</p>
+
 ---
 
 ## ☁️ Step 4 — ECS Deployment (Fargate)
