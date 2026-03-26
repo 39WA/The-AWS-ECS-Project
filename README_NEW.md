@@ -240,4 +240,3 @@ docker push <account-id>.dkr.ecr.eu-west-2.amazonaws.com/threatmod:latest
 
 
 
-GitHub: https://github.com/<yourusername>
