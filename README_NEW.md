@@ -210,6 +210,10 @@ docker push <account-id>.dkr.ecr.eu-west-2.amazonaws.com/threatmod:latest
 ### Step 5 — Terraform
 - Rebuild infrastructure using Infrastructure as Code  
 
+<p align="center">
+  <img src="docs/terraform/alb-created.png" width="800"/>
+</p>
+
 ### Step 6 — CI/CD
 - Automate builds and deployments using GitHub Actions  
 
