@@ -262,6 +262,8 @@ This infrastructure was fully provisioned using Terraform, replacing manual AWS 
   <img src="docs/terraform/alb-health.png" width="800"/>
 </p>
 
+I used Terraform destroy between iterations to prevent resource drift and unnecessary cloud costs.
+
 ### Step 6 — CI/CD
 - Automate builds and deployments using GitHub Actions  
 
