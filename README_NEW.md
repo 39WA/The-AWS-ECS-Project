@@ -200,8 +200,8 @@ docker push <account-id>.dkr.ecr.eu-west-2.amazonaws.com/threatmod:latest
 | Docker | ✅ Complete |
 | ECR | ✅ Complete |
 | ECS Deployment | ✅ Complete |
-| Terraform | ⏳ Next |
-| CI/CD | ⏳ |
+| Terraform | ✅ Complete |
+| CI/CD | ✅ Complete  |
 
 ---
 
