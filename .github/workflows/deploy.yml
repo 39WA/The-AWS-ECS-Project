@@ -18,31 +18,45 @@ jobs:
       ECR_REPOSITORY: threatmod
 
     steps:
+      # 📥 Checkout code
       - name: Checkout code
         uses: actions/checkout@v4
 
+      # 🔐 Configure AWS credentials
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
           role-to-assume: arn:aws:iam::739340816202:role/github-actions-role
           aws-region: ${{ env.AWS_REGION }}
 
+      # 🔑 Login to ECR
       - name: Login to Amazon ECR
         uses: aws-actions/amazon-ecr-login@v2
 
+      # 🐳 Build Docker image
       - name: Build Docker image
         run: docker build -t $ECR_REPOSITORY .
 
+      # 🏷 Tag image
       - name: Tag image
-        run: docker tag $ECR_REPOSITORY:latest 739340816202.dkr.ecr.eu-west-2.amazonaws.com/$ECR_REPOSITORY:latest
+        run: |
+          docker tag $ECR_REPOSITORY:latest 739340816202.dkr.ecr.eu-west-2.amazonaws.com/$ECR_REPOSITORY:latest
 
+      # 📦 Push image to ECR
       - name: Push to ECR
-        run: docker push 739340816202.dkr.ecr.eu-west-2.amazonaws.com/$ECR_REPOSITORY:latest
+        run: |
+          docker push 739340816202.dkr.ecr.eu-west-2.amazonaws.com/$ECR_REPOSITORY:latest
 
+      # ⚙️ Setup Terraform (FIX FOR YOUR ERROR)
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v3
+
+      # 🚀 Terraform init
       - name: Terraform Init
         working-directory: infra
         run: terraform init
 
+      # 🚀 Terraform apply
       - name: Terraform Apply
         working-directory: infra
         run: terraform apply -auto-approve
