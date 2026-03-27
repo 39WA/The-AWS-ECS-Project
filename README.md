@@ -281,7 +281,7 @@ GitHub → Docker → Amazon ECR → Terraform → Amazon ECS → Application Lo
   <img src="docs/images/github-actions-success.png" width="800"/>
 </p>
 
-
+"I built a fully automated CI/CD pipeline using GitHub Actions and AWS with OIDC authentication, deploying containerised applications to ECS using Terraform."
 
 ---
 
