@@ -210,34 +210,50 @@ docker push <account-id>.dkr.ecr.eu-west-2.amazonaws.com/threatmod:latest
 ### Step 5 — Terraform
 - Rebuild infrastructure using Infrastructure as Code  
 
-Terraform Apply
+## 🚀 Terraform Deployment
+
+### 📸 Terraform Apply
 <p align="center">
   <img src="docs/terraform/terraform-apply.png" width="800"/>
 </p>
 
+---
 
-VPC Create
+## 🌐 Networking (Terraform)
+
+### 📸 VPC Created
 <p align="center">
   <img src="docs/terraform/vpc.png" width="800"/>
 </p>
 
-Public Subnets Created
+### 📸 Public Subnets Created
 <p align="center">
   <img src="docs/terraform/subnets-created.png" width="800"/>
 </p>
 
-Application Load Balancer
+---
+
+## 🌐 Load Balancer
+
+### 📸 Application Load Balancer Created
 <p align="center">
   <img src="docs/terraform/alb-created.png" width="800"/>
 </p>
 
+---
 
-ECS Running
+## ☁️ ECS Deployment
+
+### 📸 ECS Service Running
 <p align="center">
   <img src="docs/terraform/ecs-running.png" width="800"/>
 </p>
 
-App LIve
+---
+
+## 🌍 Live Application
+
+### 📸 Application Accessible via ALB
 <p align="center">
   <img src="docs/terraform/alb-health.png" width="800"/>
 </p>
