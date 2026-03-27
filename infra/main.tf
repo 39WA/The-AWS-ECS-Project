@@ -15,7 +15,7 @@ resource "aws_vpc" "main" {
 resource "aws_subnet" "public_1" {
   vpc_id                  = aws_vpc.main.id
   cidr_block              = "10.0.1.0/24"
-  availability_zone       = "us-east-1a"
+  availability_zone       = "eu-west-2a"
   map_public_ip_on_launch = true
 
   tags = {
@@ -26,7 +26,7 @@ resource "aws_subnet" "public_1" {
 resource "aws_subnet" "public_2" {
   vpc_id                  = aws_vpc.main.id
   cidr_block              = "10.0.2.0/24"
-  availability_zone       = "us-east-1b"
+  availability_zone       = "eu-west-2b"
   map_public_ip_on_launch = true
 
   tags = {
@@ -167,7 +167,7 @@ resource "aws_ecs_cluster" "cluster" {
 # IAM Role for ECS Task Execution
 # -----------------------------
 resource "aws_iam_role" "ecs_task_execution_role" {
-  name = "ecsTaskExecutionRole"
+  name = "ecsTaskExecutionRole-threatmod"
 
   assume_role_policy = jsonencode({
     Version = "2012-10-17"
@@ -187,8 +187,6 @@ resource "aws_iam_role_policy_attachment" "ecs_task_execution_role_policy" {
   role       = aws_iam_role.ecs_task_execution_role.name
   policy_arn = "arn:aws:iam::aws:policy/service-role/AmazonECSTaskExecutionRolePolicy"
 }
-
-
 
 
 # -----------------------------
@@ -219,3 +217,30 @@ resource "aws_ecs_service" "service" {
   depends_on = [aws_lb_listener.listener]
 }
 
+# -----------------------------
+# ECS Task Definition
+# -----------------------------
+resource "aws_ecs_task_definition" "task" {
+  family                   = "threatmod-task"
+  network_mode             = "awsvpc"
+  requires_compatibilities = ["FARGATE"]
+  cpu                      = "256"
+  memory                   = "512"
+
+  execution_role_arn = aws_iam_role.ecs_task_execution_role.arn
+
+  container_definitions = jsonencode([
+    {
+      name  = "threatmod"
+      image = "739340816202.dkr.ecr.eu-west-2.amazonaws.com/threatmod:latest"
+      essential = true
+
+      portMappings = [
+        {
+          containerPort = 80
+          protocol      = "tcp"
+        }
+      ]
+    }
+  ])
+}
