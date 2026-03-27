@@ -212,6 +212,10 @@ docker push <account-id>.dkr.ecr.eu-west-2.amazonaws.com/threatmod:latest
 
 ## 🚀 Terraform Deployment
 
+The application is deployed via Terraform and accessible publicly through an Application Load Balancer.
+
+The application is deployed via Terraform and accessible publicly through an Application Load Balancer.
+
 ### 📸 Terraform Apply
 <p align="center">
   <img src="docs/terraform/terraform-apply.png" width="800"/>
