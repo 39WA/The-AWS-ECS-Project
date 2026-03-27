@@ -281,8 +281,7 @@ GitHub → Docker → Amazon ECR → Terraform → Amazon ECS → Application Lo
   <img src="docs/images/github-actions-success.png" width="800"/>
 </p>
 
-### Step 7 — HTTPS + Domain
-- Route53 + ACM setup  
+
 
 ---
 
