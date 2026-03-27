@@ -267,6 +267,20 @@ I used Terraform destroy between iterations to prevent resource drift and unnece
 ### Step 6 — CI/CD
 - Automate builds and deployments using GitHub Actions  
 
+## 🚀 CI/CD Pipeline
+
+This project uses GitHub Actions with OIDC authentication to deploy to AWS.
+
+Pipeline flow:
+
+GitHub → Docker → Amazon ECR → Terraform → Amazon ECS → Application Load Balancer
+
+### ✅ Pipeline Success
+
+<p align="center">
+  <img src="docs/images/github-actions-success.png" width="800"/>
+</p>
+
 ### Step 7 — HTTPS + Domain
 - Route53 + ACM setup  
 
